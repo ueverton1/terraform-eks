@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "terraform-deploy-dev-eks"
+    bucket = "terraform-dev-eks"
     key    = "devops-eks"
     region = "us-east-1"
   }
