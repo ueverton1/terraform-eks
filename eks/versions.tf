@@ -2,7 +2,8 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 3.20.0"
+      version = ">= 3.40"
+      configuration_aliases = [aws.this]
     }
 
     random = {
@@ -31,6 +32,6 @@ terraform {
     }
   }
 
-  required_version = "">=0.13, <0.14""
+  required_version = ">= 0.15"
 }
 
