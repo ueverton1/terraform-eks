@@ -10,7 +10,7 @@ provider "aws" {
 data "aws_availability_zones" "available" {}
 
 locals {
-  cluster_name = "cluster-dev-eks-${random_string.suffix.result}"
+  cluster_name = "lapag-stg-eks"
 }
 
 resource "random_string" "suffix" {
@@ -22,7 +22,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.66.0"
 
-  name                 = "cluster-dev-eks-vpc"
+  name                 = "lapag-stg-eks-vpc"
   cidr                 = "10.51.0.0/16"
   azs                  = data.aws_availability_zones.available.names
   private_subnets      = ["10.51.1.0/24", "10.51.2.0/24", "10.51.3.0/24"]
